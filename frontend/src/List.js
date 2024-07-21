@@ -5,7 +5,7 @@ const List = () => {
 
   const fetchProjects = async () => {
     try {
-      const response = await fetch('http://localhost:5000/balance', {
+      const response = await fetch('https://kunjaano-backend.vercel.app/balance', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -32,7 +32,7 @@ const List = () => {
     const projectName = document.getElementById('projectName').value;
 
     try {
-      const response = await fetch('http://localhost:5000/add', {
+      const response = await fetch('https://kunjaano-backend.vercel.app/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -56,7 +56,7 @@ const List = () => {
     const newName = prompt("Edit Project Name:", name);
     if (newName) {
       try {
-        const response = await fetch(`http://localhost:5000/edit/${id}`, {
+        const response = await fetch(`https://kunjaano-backend.vercel.app/edit/${id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json'
@@ -81,7 +81,7 @@ const List = () => {
     // eslint-disable-next-line no-restricted-globals
     if (confirm("Are you sure you want to delete this project?")) {
       try {
-        const response = await fetch(`http://localhost:5000/delete/${id}`, {
+        const response = await fetch(`https://kunjaano-backend.vercel.app/delete/${id}`, {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/json'
